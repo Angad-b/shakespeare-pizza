@@ -484,3 +484,92 @@ img { display: block; max-width: 100%; height: auto; }
 
 .order-right-cta{ display: flex; gap: 10px; flex-wrap: wrap; }
 .btn-big{ padding: 12px 18px; font-size: 1.05rem; }
+
+/* ===== Map + Contact ===== */
+.contact{
+  margin: 22px 12px;
+  padding: clamp(16px, 3vw, 28px);
+}
+.contact-grid{
+  display: grid; gap: clamp(16px, 3vw, 28px);
+  grid-template-columns: 7fr 5fr;
+  align-items: start;
+}
+@media (max-width: 1000px){
+  .contact-grid{ grid-template-columns: 1fr; }
+}
+
+/* Map */
+.contact-map{
+  position: relative;
+  border: 1px solid rgba(var(--glass-border));
+  border-radius: calc(var(--radius) + 6px);
+  overflow: clip;
+  box-shadow: var(--shadow);
+  background: rgba(255,255,255,.06);
+}
+.contact-map iframe{
+  display: block; width: 100%; height: min(60vh, 520px); border: 0;
+  filter: saturate(110%) contrast(105%);
+}
+.map-fallback{
+  position: absolute; inset: 0; display: none;
+}
+.map-fallback img{ width: 100%; height: 100%; object-fit: cover; }
+.open-maps{
+  position: absolute; left: 12px; bottom: 12px;
+}
+
+/* If iframe fails, show fallback */
+.contact-map:has(iframe[src=""]) .map-fallback,
+.contact-map.iframe-error .map-fallback{ display: block; }
+
+.contact-address{
+  position: absolute; left: 12px; top: 12px; margin: 0;
+  background: rgba(0,0,0,.45); color: #fff; padding: 8px 10px;
+  border-radius: 10px; font-style: normal; line-height: 1.25;
+  box-shadow: 0 10px 25px rgba(0,0,0,.25);
+}
+
+/* Form */
+.contact-form{
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(var(--glass-border));
+  border-radius: calc(var(--radius) + 6px);
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+.contact-form h2{
+  font-family: "Bebas Neue", sans-serif;
+  font-size: clamp(1.6rem, 3.8vw, 2.2rem);
+  margin: 0 0 4px;
+}
+.form-note{ margin: 0 0 12px; color: rgb(var(--muted)); }
+
+.contact-form label{
+  display: grid; gap: 6px; margin-bottom: 10px;
+}
+.contact-form input,
+.contact-form textarea{
+  color: rgb(var(--fg)); background: rgba(255,255,255,.06);
+  border: 1px solid rgba(var(--glass-border));
+  border-radius: 12px; padding: 10px 12px; outline: none;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.05);
+}
+.contact-form input:focus,
+.contact-form textarea:focus{
+  border-color: rgba(255,255,255,.45);
+  box-shadow: 0 0 0 3px rgba(255,255,255,.12);
+}
+.contact-form textarea{ resize: vertical; }
+
+.form-ctas{ display: flex; gap: 10px; flex-wrap: wrap; margin-top: 8px; }
+
+.form-status{
+  margin-top: 10px; color: rgb(var(--muted));
+}
+.form-status.success{ color: #7CDE7C; }
+.form-status.error{ color: #FFB4B4; }
+
+/* Honeypot hides from users but exists for bots */
+.hp{ position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
