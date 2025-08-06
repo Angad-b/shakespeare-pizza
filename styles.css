@@ -177,7 +177,7 @@ img { display: block; max-width: 100%; height: auto; }
 
 /* Scroll cue (optional) */
 .hero::after{
-  content: "Scroll";
+  content: "";
   position: absolute; bottom: 14px; left: 50%; translate: -50% 0;
   font-size: .9rem; color: rgba(255,255,255,.75);
   letter-spacing: .12em;
