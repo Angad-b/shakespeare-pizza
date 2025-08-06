@@ -330,7 +330,7 @@ img { display: block; max-width: 100%; height: auto; }
   width: 600px;
   max-width: 100%;
   min-width: 320px;
-  height: 80%;
+  height: 95%;
   min-height: 320px;
   aspect-ratio: 10/7;
 }
