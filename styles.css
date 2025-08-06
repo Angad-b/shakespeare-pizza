@@ -573,3 +573,65 @@ img { display: block; max-width: 100%; height: auto; }
 
 /* Honeypot hides from users but exists for bots */
 .hp{ position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+/* ===== Footer ===== */
+.footer{
+  margin: 22px 12px 12px;              /* small bottom margin so no gap */
+  padding: clamp(16px, 3vw, 24px);
+}
+
+.footer-grid{
+  display: grid; gap: clamp(16px, 3vw, 28px);
+  grid-template-columns: 5fr 3fr 3fr 3fr;
+  align-items: start;
+}
+@media (max-width: 1000px){
+  .footer-grid{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px){
+  .footer-grid{ grid-template-columns: 1fr; }
+}
+
+/* Brand block */
+.foot-brand .logo{ display:flex; align-items:center; gap:10px; }
+.foot-brand .logo span{
+  font-family: "Bebas Neue", sans-serif; letter-spacing: .6px; font-size: 1.4rem;
+}
+.foot-address{ margin: 8px 0 10px; font-style: normal; color: rgb(var(--muted)); }
+.foot-ctas{ display:flex; gap:10px; flex-wrap:wrap; }
+
+/* Columns */
+.foot-title{
+  margin: 0 0 6px; font-size: 1.05rem; letter-spacing: .3px; font-weight: 700;
+}
+.foot-nav ul,
+.foot-hours .hours-mini,
+.social{ list-style:none; margin:0; padding:0; }
+.foot-nav li a{ display:inline-block; padding: 6px 0; opacity:.9; }
+.foot-nav li a:hover{ opacity:1; }
+
+.hours-mini li{
+  display:flex; justify-content:space-between; gap: 12px;
+  padding: 6px 0; border-bottom: 1px dashed rgba(255,255,255,.12);
+}
+.hours-mini li:last-child{ border-bottom: 0; }
+.muted{ color: rgb(var(--muted)); margin-top: 6px; }
+
+.social li a{ display:inline-block; padding: 6px 0; }
+
+/* Legal row */
+.legal{
+  margin-top: 10px; padding-top: 10px;
+  border-top: 1px solid rgba(var(--glass-border));
+  display:flex; align-items:center; justify-content:space-between; gap: 10px;
+  flex-wrap: wrap;
+}
+.backtop{
+  appearance:none; border:1px solid rgba(var(--glass-border));
+  background: rgba(255,255,255,.08); color: inherit;
+  padding: 8px 12px; border-radius: 999px; cursor:pointer;
+}
+.backtop:hover{ background: rgba(255,255,255,.16); }
+
+/* Kill trailing gaps from last section margins */
+main > section:last-of-type{ margin-bottom: 12px; }

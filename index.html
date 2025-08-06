@@ -147,8 +147,6 @@
 </head>
 
 <body>
-  <!-- Accessibility: Skip link -->
-  <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- Header (Sticky) -->
   <header id="site-header" class="header glass sticky" role="banner" aria-label="Primary">
@@ -471,33 +469,63 @@
 
   </main>
 
-  <footer class="footer glass" role="contentinfo" aria-label="Footer">
-    <div class="container">
-      <div class="footer-brand">
-        <img src="/images/logo.png" alt="" width="64" height="64" />
-        <p>
-          Shakespeare Pizza<br/>
-          2264 Line 34, Unit 2, Shakespeare, ON N0B 2P0 <!-- TODO: confirm -->
-        </p>
-      </div>
-      <nav aria-label="Footer">
-        <ul class="foot-nav">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#menu">Menu</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#order">Order</a></li>
-          <li><a href="#contact">Contact</a></li>
+  <footer id="site-footer" class="footer glass" role="contentinfo" aria-label="Footer">
+    <div class="container footer-grid">
+        <!-- Brand -->
+        <div class="foot-brand">
+        <a class="logo" href="#home" aria-label="Back to top">
+            <img src="/images/logo.png" alt="" width="56" height="56" />
+            <span>Shakespeare Pizza</span>
+        </a>
+        <address class="foot-address">
+            2264 Line 34, Unit 2<br/>Shakespeare, ON N0B 2P0
+        </address>
+        <div class="foot-ctas">
+            <a class="btn btn-primary" href="tel:+12266488888">📞 Call Now</a>
+            <a class="btn btn-secondary" target="_blank" rel="noopener"
+            href="https://maps.google.com/?q=Shakespeare+Pizza+Shakespeare+ON">📍 Directions</a>
+        </div>
+        </div>
+
+        <!-- Quick links -->
+        <nav class="foot-nav" aria-label="Footer">
+        <h3 class="foot-title">Explore</h3>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#specials">Specials</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#order">How to Order</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
-      </nav>
-      <div class="foot-ctas">
-        <a class="btn btn-primary" href="tel:+12266488888">📞 (226) 648-8888</a>
-        <a class="btn btn-secondary" href="https://maps.google.com/?q=Shakespeare+Pizza+Shakespeare+ON" target="_blank" rel="noopener">📍 Get Directions</a>
-      </div>
+        </nav>
+
+        <!-- Hours -->
+        <div class="foot-hours" aria-label="Hours">
+        <h3 class="foot-title">Hours</h3>
+        <ul class="hours-mini">
+            <!-- TODO: set real hours -->
+            <li><span>Mon–Sun</span><span>11:00–21:00</span></li>
+        </ul>
+        <p class="muted">Hours may vary on holidays — call to confirm.</p>
+        </div>
+
+        <!-- Social -->
+        <div class="foot-social" aria-label="Social links">
+        <h3 class="foot-title">Follow</h3>
+        <ul class="social">
+            <li><a href="https://www.instagram.com/shakespearepizza/" target="_blank" rel="noopener" aria-label="Instagram">📷 Instagram</a></li>
+            <!-- Add more if needed -->
+        </ul>
+        </div>
     </div>
+
     <div class="legal">
-      <small>© <span id="year"></span> Shakespeare Pizza. All rights reserved.</small>
+        <small>© <span id="year"></span> Shakespeare Pizza · All rights reserved · Site by <a href="https://www.skilledstack.ca" target="_blank" rel="noopener" style="text-decoration:underline;">SkilledStack</a></small>
+        <button class="backtop" aria-label="Back to top">↑ Back to top</button>
     </div>
   </footer>
+
 
   <noscript>
     <style>

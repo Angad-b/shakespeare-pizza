@@ -127,3 +127,14 @@
   grid.addEventListener('touchmove', mmove, { passive: false });
   grid.addEventListener('touchend', mup);
 })();
+
+/* ===== Footer: year + back-to-top ===== */
+(function(){
+  const y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
+
+  const btn = document.querySelector('.backtop');
+  btn?.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
