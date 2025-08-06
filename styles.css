@@ -64,16 +64,46 @@ img { display: block; max-width: 100%; height: auto; }
 
 /* Mobile menu button (hamburger) */
 .menu-toggle{
-  display:none; width: 42px; height: 42px; border: 1px solid rgba(var(--glass-border));
-  border-radius: 10px; background: rgba(255,255,255,.08); justify-self: end;
+  display: none;
+  width: 44px; height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255,255,255,.13);
+  box-shadow: 0 2px 12px rgba(0,0,0,.13);
+  justify-self: end;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background .2s, box-shadow .2s;
+  position: relative;
 }
-.menu-toggle .bar{ display:block; width: 22px; height: 2px; margin:6px auto; background: #fff; border-radius: 2px; transition: transform .25s ease, opacity .25s ease; }
-.menu-toggle[aria-expanded="true"] .bar:nth-child(1){ transform: translateY(8px) rotate(45deg); }
-.menu-toggle[aria-expanded="true"] .bar:nth-child(2){ opacity: 0; }
-.menu-toggle[aria-expanded="true"] .bar:nth-child(3){ transform: translateY(-8px) rotate(-45deg); }
+.menu-toggle:hover,
+.menu-toggle:focus {
+  background: rgba(255,255,255,.22);
+  box-shadow: 0 4px 18px rgba(0,0,0,.18);
+}
+.menu-toggle .bar {
+  display: block;
+  width: 8px;
+  height: 8px;
+  margin: 6px auto;
+  background: linear-gradient(90deg, rgb(var(--primary)), rgb(var(--secondary)));
+  border-radius: 50%;
+  transition: transform .28s cubic-bezier(.4,2,.3,1), opacity .22s, background .2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,.10);
+}
+.menu-toggle[aria-expanded="true"] .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.menu-toggle[aria-expanded="true"] .bar:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle[aria-expanded="true"] .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
 
 /* Responsive */
-@media (max-width: 960px){
+@media (max-width: 1070px){
   .container{ grid-template-columns: auto auto auto; }
   .menu-toggle{ display: inline-flex; align-items:center; justify-content:center; }
   .nav-wrap{
@@ -253,8 +283,20 @@ img { display: block; max-width: 100%; height: auto; }
   .specials-grid > .special-card{ grid-column: span 6; }
 }
 @media (max-width: 700px){
-  .specials-grid{ display: grid; grid-auto-flow: column; grid-auto-columns: 80%; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 6px; }
-  .specials-grid > .special-card{ grid-column: auto; scroll-snap-align: start; min-width: 320px; }
+  .specials-grid {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(12px, 2vw, 18px);
+    overflow-x: unset;
+    padding-bottom: 0;
+  }
+  .specials-grid > .special-card {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    align-self: stretch;
+    scroll-snap-align: unset;
+  }
 }
 
 /* card */
@@ -635,3 +677,4 @@ img { display: block; max-width: 100%; height: auto; }
 
 /* Kill trailing gaps from last section margins */
 main > section:last-of-type{ margin-bottom: 12px; }
+
