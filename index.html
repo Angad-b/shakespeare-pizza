@@ -190,7 +190,7 @@
         <div class="hero-overlay"></div>
 
         <div class="hero-content" data-animate>
-            <h1>Love at First Bite <span aria-hidden="true">🍕</span></h1>
+            <h1>Love at First Bite <span aria-hidden="true"></span></h1>
             <p class="sub">Takeout Only • Cash Only • Since 2017</p>
             <div class="cta-row">
             <a class="btn btn-primary" href="tel:+12266488888">📞 Call to Order</a>
@@ -335,16 +335,75 @@
         </div>
     </section>
 
-
-    <!-- 5) Gallery / Instagram -->
-    <section id="gallery" class="gallery glass" aria-label="Photo Gallery">
-      <!-- masonry / lightbox -->
-    </section>
-
     <!-- 6) How to Order -->
-    <section id="order" class="order glass" aria-label="How to Order">
-      <!-- info cards: call, visit, cash-only, no-delivery -->
+    <section id="order" class="order glass" aria-label="How to Order" data-animate>
+        <div class="container order-grid">
+            <!-- Left: quick steps + cards -->
+            <div class="order-left">
+            <h2>How to Order</h2>
+            <ol class="order-steps" aria-label="Steps to order">
+                <li>Tap <strong>Call Now</strong> and place your order.</li>
+                <li>Head to <strong>2264 Line 34, Shakespeare, ON</strong>.</li>
+                <li>Pickup and pay — <strong>cash only</strong>.</li>
+            </ol>
+
+            <div class="order-cards" role="list">
+                <article class="order-card" role="listitem">
+                <div class="ic" aria-hidden="true">📞</div>
+                <h3>Call Us</h3>
+                <p><a class="phone" href="tel:+12266488888">(226) 648-8888</a></p>
+                <a class="btn btn-primary" href="tel:+12266488888">Call Now</a>
+                </article>
+
+                <article class="order-card" role="listitem">
+                <div class="ic" aria-hidden="true">📍</div>
+                <h3>Find Us</h3>
+                <p>2264 Line 34, Unit 2<br/>Shakespeare, ON N0B 2P0</p>
+                <a class="btn btn-secondary" target="_blank" rel="noopener"
+                    href="https://maps.google.com/?q=Shakespeare+Pizza+Shakespeare+ON">Open in Maps</a>
+                </article>
+
+                <article class="order-card" role="listitem">
+                <div class="ic" aria-hidden="true">💵</div>
+                <h3>Payment</h3>
+                <p><strong>Cash only</strong> at pickup.</p>
+                </article>
+
+                <article class="order-card" role="listitem">
+                <div class="ic" aria-hidden="true">🚚</div>
+                <h3>Delivery</h3>
+                <p><strong>No delivery</strong> — takeout only.</p>
+                </article>
+            </div>
+
+            <!-- Mobile sticky CTA -->
+            <a class="btn btn-primary order-sticky" href="tel:+12266488888" aria-label="Call Shakespeare Pizza">📞 Call to Order</a>
+            </div>
+
+            <!-- Right: hours -->
+            <aside class="order-right" aria-label="Hours">
+            <h3>Hours</h3>
+            <table class="hours">
+                <tbody>
+                <!-- TODO: set accurate hours -->
+                <tr><th>Mon</th><td>11:00–21:00</td></tr>
+                <tr><th>Tue</th><td>11:00–21:00</td></tr>
+                <tr><th>Wed</th><td>11:00–21:00</td></tr>
+                <tr><th>Thu</th><td>11:00–21:00</td></tr>
+                <tr><th>Fri</th><td>11:00–21:00</td></tr>
+                <tr><th>Sat</th><td>11:00–21:00</td></tr>
+                <tr><th>Sun</th><td>11:00–21:00</td></tr>
+                </tbody>
+            </table>
+            <p class="hours-note">Hours may vary on holidays. Call to confirm.</p>
+            <div class="order-right-cta">
+                <a class="btn btn-primary btn-big" href="tel:+12266488888">📞 Call Now</a>
+                <a class="btn btn-ghost" href="#contact">Contact</a>
+            </div>
+            </aside>
+        </div>
     </section>
+
 
     <!-- 7) Map + Contact -->
     <section id="contact" class="contact glass" aria-label="Contact & Map">
